@@ -47,7 +47,6 @@ function getItemPriceByName(items, name) {
     if (items[i].name === name) {
         return items[i].price;
     }
-}
 return -1;
 }
 
@@ -57,8 +56,10 @@ return -1;
  * @returns {Item[]} array of items that belong to the given `category`
  */
 function getItemsByCategory(items, category) {
-  // TODO: use `filter`
+  return items.filter(item => item.category === category);
 }
+
+  
 
 /**
  * @param {Item[]} items - array of items
