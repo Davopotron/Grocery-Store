@@ -14,15 +14,17 @@
  * @param {Item[]} items - array of items
  */
 function logNames(items) {
-  // TODO: use `forEach`
-}
+  // TODO: use `forEach` 
+  for(logNames) items.forEach((itemName) =>;
+    console.log(itemName))}
+  
 
 /**
  * @param {Item[]} items - array of items
  * @returns {string[]} an array of item names in all uppercase
  */
 function getUppercaseNames(items) {
-  // TODO: use `map`
+  return items.map(item => item.name.toUpperCase());
 }
 
 /**
@@ -31,7 +33,8 @@ function getUppercaseNames(items) {
  * @returns {Item} - the item in `items` with the given `id`
  */
 function getItemById(items, id) {
-  // TODO: use `find`
+  return items.find(item => item.id === id);
+  console.log(items.find)
 }
 
 /**
@@ -40,7 +43,11 @@ function getItemById(items, id) {
  * @returns {number} the price of the item named `name`
  */
 function getItemPriceByName(items, name) {
-  // TODO: use a loop!
+  for (let i = 0; i < items.length; i++) 
+    if (items[i].name === name) {
+        return items[i].price;
+    }
+return -1;
 }
 
 /**
@@ -49,15 +56,20 @@ function getItemPriceByName(items, name) {
  * @returns {Item[]} array of items that belong to the given `category`
  */
 function getItemsByCategory(items, category) {
-  // TODO: use `filter`
+  return items.filter(item => item.category === category);
 }
+
+  
 
 /**
  * @param {Item[]} items - array of items
  * @returns {number} the total quantity of all items
  */
 function countItems(items) {
-  // TODO: use `reduce`
+  for(countItems(items) of totalQuant) === total{
+    items.reduce((total, item) => total + item.quantity, 0)
+  }
+  return 0
 }
 
 /**
@@ -65,7 +77,7 @@ function countItems(items) {
  * @returns {number} the cost of all given items
  */
 function calculateTotalPrice(items) {
-  // TODO: use `reduce`
+  return items.reduce((total, item) => total + item.price, 0);
 }
 
 // --------------------- DO NOT CHANGE THE CODE BELOW ------------------------ //
