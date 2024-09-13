@@ -76,18 +76,52 @@ function getItemById(items, id) {
   console.log(items.find)
 }
 
+/**For each item in the array items
+ * If that item's id matches the id I'm looking for
+ * Then I've found it, I can return that item right away
+ * If I've seen everything, and I don't find it, then return undefined
+
+for let ex:
+{
+for (let i = 0; i < items.length; i++) {
+const item = items[i];
+if (item.id === id) {
+return item;
+}
+}
+return undefined;
+}
+
+for find function: 
+{
+return items.find((item) => item.id === id);
+}
+*/
+
+
+
 /**
  * @param {Item[]} items - array of items
  * @param {string} name - name of the item to find
  * @returns {number} the price of the item named `name`
  */
 function getItemPriceByName(items, name) {
-  for (let i = 0; i < items.length; i++) 
-    if (items[i].name === name) {
-        return items[i].price;
+  for (const item of items) {
+  if (items.name === name) {
+  return items.price;
     }
-return -1;
+return undefined;
 }
+}
+
+/**for of ex:
+ * for (const item of items) {
+ * if (item.name === name){
+ * return item.price;
+ * }
+ * return undefined
+ * }
+ */
 
 /**
  * @param {Item[]} items - array of items
@@ -98,6 +132,14 @@ function getItemsByCategory(items, category) {
   return items.filter(item => item.category === category);
 }
 
+/**
+ * For each item in the array items
+ * If that item's category matches the category I'm looking for
+ * Then I've found it, save that item in my output array
+ * Afterward, return the output array w/all the matching items
+ * 
+ * 
+ */
   
 
 /**
@@ -105,11 +147,32 @@ function getItemsByCategory(items, category) {
  * @returns {number} the total quantity of all items
  */
 function countItems(items) {
-  for(countItems(items) of totalQuant) === total{
-    items.reduce((total, item) => total + item.quantity, 0)
-  }
-  return 0
+  let count = 0;
+  for (const item of items) {
+  count += item.quantity;}
+  return count;
 }
+
+
+/**For each item in items
+ * Look ar the quantity of the item and add that to the total
+ * Return the total
+ * 
+ * For..of ex:
+ * {
+ * let count = 0;
+ * for (const item of items) {
+ * count += item.quantity;}
+ * return count;
+ * }
+ * 
+ * for reduce ex:
+ * {
+ * return items.reduce((count, item) => count + item.quantity,)
+ * }
+ */
+
+
 
 /**
  * @param {Item[]} items - array of items
@@ -118,6 +181,13 @@ function countItems(items) {
 function calculateTotalPrice(items) {
   return items.reduce((total, item) => total + item.price, 0);
 }
+
+/**for each item in items
+ * Look at the quantity of the item * the item's price and add that to the total
+ * Return the total
+ * (can copy and paste from prev ex for the for loops and while loops)
+ * 
+ */
 
 // --------------------- DO NOT CHANGE THE CODE BELOW ------------------------ //
 
