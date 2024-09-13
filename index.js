@@ -33,7 +33,8 @@ function getUppercaseNames(items) {
  * @returns {Item} - the item in `items` with the given `id`
  */
 function getItemById(items, id) {
-  // TODO: use `find`
+  return items.find(item => item.id === id);
+  console.log(items.find)
 }
 
 /**
