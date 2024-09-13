@@ -17,6 +17,21 @@ function logNames(items) {
   // TODO: use `forEach` 
   for(logNames) items.forEach((itemName) =>;
     console.log(itemName))}
+
+    /**notes for this question:
+   
+    //* items.forEach(function (item)){ 
+    console.log(item.name)
+})
+    that's for each, but this can be elaborated into:
+    
+    While Loop:
+    let idx = 0;
+    while (idx < items.length)
+    const
+    
+    For..of Loop*/
+    
   
 
 /**
@@ -26,6 +41,30 @@ function logNames(items) {
 function getUppercaseNames(items) {
   return items.map(item => item.name.toUpperCase());
 }
+
+/**For each item in the array
+ * get the item's name
+ * convert that name to all uppercase
+ * put that uppercase name into a new array
+ * return my new array of all the uppercase names
+ * 
+ * to do this: For.. of Loop
+ * for let i = 0; i < items.length; i++){
+ * const item = items[i];
+ * const uppercaseName = item.name.toUpperCase();
+ * uppercaseNames.push(uppercaseName);
+ * }
+
+const uppercaseNames = [];
+for (const item of items) {
+const uppercaseName.push(uppercaseName);
+}
+return uppercaseName
+}
+
+For map/.map
+{return items.map((item) => item.name.toUpperCase());}
+*/
 
 /**
  * @param {Item[]} items - array of items
